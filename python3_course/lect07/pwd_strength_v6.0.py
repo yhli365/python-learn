@@ -90,7 +90,7 @@ def main():
     """
 
     try_times = 5
-    filepath = 'password_6.0.txt'
+    filepath = '../target/password_6.0.txt'
     # 实例化文件工具对象
     file_tool = FileTool(filepath)
 

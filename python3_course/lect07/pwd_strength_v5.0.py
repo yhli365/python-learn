@@ -78,7 +78,7 @@ def main():
         password_tool = PasswordTool(password)
         password_tool.process_password()
 
-        f = open('password_5.0.txt', 'a')
+        f = open('../target/password_5.0.txt', 'a')
         f.write('密码：{}, 强度：{}\n'.format(password, password_tool.strength_level))
         f.close()
 

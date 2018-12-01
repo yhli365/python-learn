@@ -7,7 +7,6 @@
     日期：09/09/2017
 """
 
-
 def check_number_exist(password_str):
     """
         判断字符串中是否含有数字
@@ -66,7 +65,7 @@ def main():
         else:
             print('密码要求包含字母！')
 
-        f = open('password_3.0.txt', 'a')
+        f = open('../target/password_3.0.txt', 'a')
         f.write('密码：{}, 强度：{}\n'.format(password, strength_level))
         f.close()
 

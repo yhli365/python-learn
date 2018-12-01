@@ -84,7 +84,7 @@ def main():
     #     print('尝试次数过多，密码设置失败！')
 
     # 读取文件
-    f = open('password_3.0.txt', 'r')
+    f = open('../target/password_3.0.txt', 'r')
 
     # 1. read()
     # content = f.read()

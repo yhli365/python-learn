@@ -147,3 +147,22 @@ a.	数据清洗
 b.	利用Pandas进行数据可视化
 ```
 
+
+## Bugs
+=============================
+
+### ImportError: DLL load failed
+```
+>>>>>>>>>>lect08_v3.0.py
+D:\yapp\python\Anaconda3\python.exe lect08/lect08_v3.0.py
+Traceback (most recent call last):
+  File "D:\yapp\python\Anaconda3\lib\site-packages\numpy\core\__init__.py", line 16, in <module>
+    from . import multiarray
+ImportError: DLL load failed: 找不到指定的模块。
+<<<<<<<<<<
+升级组件版本
+1)Settings/Project Interpreter: Anaconda3/Python 3.7
+numpy         1.15.1  --> 1.15.4
+matplotlib    2.2.3   --> 3.0.2
+```
+
