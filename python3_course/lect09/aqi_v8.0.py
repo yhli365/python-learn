@@ -15,7 +15,8 @@ def get_city_aqi(city_pinyin):
     """
     url = 'http://pm25.in/' + city_pinyin
     r = requests.get(url, timeout=30)
-    soup = BeautifulSoup(r.text, 'lxml')
+    # soup = BeautifulSoup(r.text, 'lxml')
+    soup = BeautifulSoup(r.text, 'html.parser')
     div_list = soup.find_all('div', {'class': 'span1'})
 
     city_aqi = []
@@ -36,7 +37,8 @@ def get_all_cities():
     url = 'http://pm25.in/'
     city_list = []
     r = requests.get(url, timeout=30)
-    soup = BeautifulSoup(r.text, 'lxml')
+    # soup = BeautifulSoup(r.text, 'lxml')
+    soup = BeautifulSoup(r.text, 'html.parser')
 
     city_div = soup.find_all('div', {'class': 'bottom'})[1]
     city_link_list = city_div.find_all('a')
@@ -59,7 +61,7 @@ def main():
     #     print(city_name, city_aqi)
     header = ['City', 'AQI', 'PM2.5/1h', 'PM10/h', 'CO/1h', 'NO2/1h', 'O3/1h', 'O3/8h', 'SO2/1h']
 
-    with open('china_city_aqi.csv', 'w', encoding='utf-8', newline='') as f:
+    with open('../target/china_city_aqi.csv', 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(header)
         for i, city in enumerate(city_list):

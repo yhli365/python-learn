@@ -25,9 +25,10 @@ def main():
     city_list.sort(key=lambda city: city['aqi'])
     top5_list = city_list[:5]
 
-    f = open('top5_aqi.json', mode='w', encoding='utf-8')
+    f = open('../target/top5_aqi.json', mode='w', encoding='utf-8')
     json.dump(top5_list, f, ensure_ascii=False)
     f.close()
+
 
 if __name__ == '__main__':
     main()

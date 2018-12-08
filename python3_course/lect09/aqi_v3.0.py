@@ -31,7 +31,7 @@ def main():
     for city in city_list:
         lines.append(list(city.values()))
 
-    f = open('aqi.csv', 'w', encoding='utf-8', newline='')
+    f = open('../target/aqi.csv', 'w', encoding='utf-8', newline='')
     writer = csv.writer(f)
     for line in lines:
         writer.writerow(line)

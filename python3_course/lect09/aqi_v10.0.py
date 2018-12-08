@@ -38,7 +38,7 @@ def main():
     top50_cities = clean_aqi_data.sort_values(by=['AQI']).head(50)
     top50_cities.plot(kind='bar', x='City', y='AQI', title='空气质量最好的50个城市',
                       figsize=(20, 10))
-    plt.savefig('top50_aqi_bar.png')
+    plt.savefig('../target/top50_aqi_bar.png')
     plt.show()
 
 

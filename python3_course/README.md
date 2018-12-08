@@ -166,3 +166,24 @@ numpy         1.15.1  --> 1.15.4
 matplotlib    2.2.3   --> 3.0.2
 ```
 
+### bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml
+```
+>>>>>>>>>>aqi_v6.0.py
+请输入城市拼音：beijing
+Traceback (most recent call last):
+  File "Y:/gitcode/yhli365/python-learn/python3_course/lect09/aqi_v6.0.py", line 40, in <module>
+    main()
+  File "Y:/gitcode/yhli365/python-learn/python3_course/lect09/aqi_v6.0.py", line 35, in main
+    city_aqi = get_city_aqi(city_pinyin)
+  File "Y:/gitcode/yhli365/python-learn/python3_course/lect09/aqi_v6.0.py", line 17, in get_city_aqi
+    soup = BeautifulSoup(r.text, 'lxml')
+  File "D:\yapp\python\Anaconda3\lib\site-packages\bs4\__init__.py", line 198, in __init__
+    % ",".join(features))
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+<<<<<<<<<<
+网上好多说是新的库不支持，卸载新的换老的就可以了，我从4.1一直试到3.7.2都没用，后来仔细琢磨发现是新版本语法支持改变了 
+解决方法：在报错代码中把函数参数中所有的"lxml"改成"html.parser"
+例子：
+bs = BeautifulSoup(r, 'lxml').find(
+#改成 bs = BeautifulSoup(r, 'html.parser').find(
+```

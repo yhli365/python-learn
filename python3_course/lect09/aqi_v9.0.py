@@ -35,8 +35,8 @@ def main():
     print(bottom10_cities)
 
     # 保存csv文件
-    top10_cities.to_csv('top10_aqi.csv', index=False)
-    bottom10_cities.to_csv('bottom10_aqi.csv', index=False)
+    top10_cities.to_csv('../target/top10_aqi.csv', index=False)
+    bottom10_cities.to_csv('../target/bottom10_aqi.csv', index=False)
 
 
 if __name__ == '__main__':

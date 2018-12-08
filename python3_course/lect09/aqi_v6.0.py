@@ -14,7 +14,8 @@ def get_city_aqi(city_pinyin):
     """
     url = 'http://pm25.in/' + city_pinyin
     r = requests.get(url, timeout=30)
-    soup = BeautifulSoup(r.text, 'lxml')
+    # soup = BeautifulSoup(r.text, 'lxml')
+    soup = BeautifulSoup(r.text, 'html.parser')
     div_list = soup.find_all('div', {'class': 'span1'})
 
     city_aqi = []
